@@ -2,8 +2,10 @@
 
 source 'https://rubygems.org'
 
-gem 'capistrano-bundler'
-gem 'capistrano-rvm'
+group :deployment do
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+end
 
 gem 'jekyll'
 gem 'jekyll-gist'
