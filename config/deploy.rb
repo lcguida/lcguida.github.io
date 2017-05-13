@@ -36,7 +36,7 @@ set :rvm_ruby_version, '2.4.0@lcguida'
 # set :keep_releases, 5
 namespace :deploy do
 
-  after :updated, :jekyll_build do
+  after :publishing, :jekyll_build do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       within current_path do
         execute :bundle, 'exec jekyll build'
