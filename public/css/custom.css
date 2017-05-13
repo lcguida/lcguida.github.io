@@ -1,0 +1,56 @@
+/* Overrides Hyde theme to customize it */
+
+/** Global **/
+
+@media (min-width: 48em) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (min-width: 58em) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/** Custom Theme Colors **/
+
+.guida-theme .sidebar {
+  background-color: #464B50;
+}
+.guida-theme .content a,
+.guida-theme .related-posts li a:hover {
+  color: #464B50;
+}
+
+/** Side Bar **/
+
+.sidebar {
+  color: #A7A7A7;
+}
+
+.sidebar-nav-item {
+  line-height: 2.5;
+  padding-left: 0.5rem;
+}
+
+.sidebar-social {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.sidebar-social .icon {
+  font-size: 1.5em;
+}
+
+.sidebar-social .item {
+  display: inline-block;
+  width: auto;
+  min-width: 30px;
+  width: 2rem;
+}
+
+.sidebar-about h1 {
+  font-family: "Lato", serif;
+  font-size: 2.5rem;
+}
