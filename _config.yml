@@ -27,7 +27,4 @@ social:
   github:         https://github.com/lcguida
   twitter:        https://twitter.com/lcguida
 
-github:
-  repo:           https://github.com/lcguida/lcguida.github.io
-
 gems: [jekyll-paginate, jekyll-gist]
