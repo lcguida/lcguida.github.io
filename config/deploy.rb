@@ -11,7 +11,6 @@ set :rvm_type, :user
 set :rvm_ruby_version, '2.4.0@lcguida'
 
 namespace :deploy do
-
   task :jekyll_build do
     on roles(:app), in: :groups, limit: 3, wait: 10 do
       within current_path do
@@ -21,5 +20,5 @@ namespace :deploy do
   end
 
   # Run the jekyll build command after the release folder is created
-  after "symlink:release", ":jekyll_buil"
+  after 'symlink:release', :jekyll_build
 end

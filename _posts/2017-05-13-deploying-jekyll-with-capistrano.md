@@ -43,14 +43,14 @@ Capified
 # config valid only for current version of Capistrano
 lock "3.8.1"
 
-set :application, "lcguida"
-set :repo_url, "git@github.com:lcguida/lcguida.github.io.git"
+set :application, "my_app"
+set :repo_url, "git@<git-url>.git"
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/deploy/lcguida.com'
+set :deploy_to, '/home/deploy/mysite.com'
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.4.0@lcguida'
+set :rvm_ruby_version, '2.4.0@mysite'
 
 namespace :deploy do
 
@@ -63,7 +63,7 @@ namespace :deploy do
   end
 
   # Run the jekyll build command after the release folder is created
-  after "symlink:release", ":jekyll_buil"
+  after "symlink:release", :jekyll_build
 end
 ```
 
