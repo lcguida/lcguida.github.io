@@ -40,26 +40,21 @@ Capified
 `deploy.rb`:
 
 ```ruby
+# config valid only for current version of Capistrano
 lock "3.8.1"
 
-# Application name
 set :application, "lcguida"
-
-# Github URL
 set :repo_url, "git@github.com:lcguida/lcguida.github.io.git"
 
-# Deployment path
-set :deploy_to, '/home/deploy/blog'
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, '/home/deploy/lcguida.com'
 
-# RVM Configuration
 set :rvm_type, :user
-set :rvm_ruby_version, '2.4.0@blog'
-
-# Add a task to build the site, after it has been
+set :rvm_ruby_version, '2.4.0@lcguida'
 
 namespace :deploy do
 
-  task: :jekyll_build do
+  task :jekyll_build do
     on roles(:app), in: :groups, limit: 3, wait: 10 do
       within current_path do
         execute :bundle, 'exec jekyll build'
@@ -67,10 +62,9 @@ namespace :deploy do
     end
   end
 
+  # Run the jekyll build command after the release folder is created
+  after "symlink:release", ":jekyll_buil"
 end
-
-# Run the jekyll build command after the release folder is created
-after "symlink:release", "update_jekyll"
 ```
 
 And `production.rb`:
