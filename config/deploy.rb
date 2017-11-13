@@ -10,6 +10,8 @@ set :deploy_to, '/home/deploy/lcguida.com'
 set :rvm_type, :user
 set :rvm_ruby_version, '2.4.0@lcguida'
 
+set :linked_dirs, fetch(:linked_dirs, []).push('.well-known', 'log')
+
 namespace :deploy do
   task :jekyll_build do
     on roles(:app), in: :groups, limit: 3, wait: 10 do
