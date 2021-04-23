@@ -10,7 +10,7 @@ permalink:        pretty
 title:            '@lcguida'
 tagline:          'lcguida.com'
 description:      'Leandro Guida: Ruby on Rails software developer. Coding enthusiast. Geek. Heavy netflix consumer. Likes to hiking and dancing.'
-url:              http://hyde.getpoole.com
+url:              'https://lcguida.com'
 baseurl:          /
 
 author:
